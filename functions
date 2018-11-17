@@ -1,0 +1,25 @@
+
+
+We're going to need functions in our app, and declaring them is very easy. There's 2 ways: inside render and outside of it.
+1- Inside : we declare them like any ES6 function with const then we call it by name.
+2- outside : we declare them without const but we need to add "this." before its name. 
+For example to make the check a function, we do the following: 
+
+//First method :inside
+class Student extends Component{
+	render() {
+		const check = () => {
+			if(this.props.name==="eminem"){ return 0; }
+			else{ return 600; }}
+		let price = check();
+		return(/*JSX*/ );
+}}
+//Second method :outside
+class Student extends Component{
+	const check = () => {
+			if(this.props.name==="eminem"){ return 0; }
+			else{ return 600; }}
+	render() {
+		let price = this.check();
+		return(/*JSX*/ );
+}}
